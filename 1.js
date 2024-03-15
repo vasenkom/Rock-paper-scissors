@@ -13,21 +13,37 @@ function getNumber() {
 };
 
 //results of the game
+let userWinCounts = 0;
+let computerWinCounts = 0;
+
 function playRound(userInputUpperCase, computerChoice) {
     if (userInputUpperCase == computerChoice) {
         console.log(`Computer's choice is '${computerChoice}'. Tie. Both selected ${userInputUpperCase}`);
+        console.log(`User's wins: ${userWinCounts}, computer's win: ${computerWinCounts}`);
     } else if (userInputUpperCase == 'Scissors' && computerChoice == 'Rock') {
-        console.log(`Computer's choice is '${computerChoice}'.You loose. ${computerChoice} beats ${userInputUpperCase}`)
+        console.log(`Computer's choice is '${computerChoice}'.You loose. ${computerChoice} beats ${userInputUpperCase}`);
+        computerWinCounts ++;
+        console.log(`User's wins: ${userWinCounts}, computer's win: ${computerWinCounts}`);
     } else if (userInputUpperCase == 'Scissors' && computerChoice == 'Paper') {
-        console.log(`Computer's choice is '${computerChoice}'. You win! ${userInputUpperCase} beats ${computerChoice}`)
+        console.log(`Computer's choice is '${computerChoice}'. You win! ${userInputUpperCase} beats ${computerChoice}`);
+        userWinCounts ++;
+        console.log(`User's wins: ${userWinCounts}, computer's win: ${computerWinCounts}`);
     } else if (userInputUpperCase == 'Paper' && computerChoice == 'Rock') {
-        console.log(`Computer's choice is '${computerChoice}'. You win! ${userInputUpperCase} beats ${computerChoice}`)
+        console.log(`Computer's choice is '${computerChoice}'. You win! ${userInputUpperCase} beats ${computerChoice}`);
+        userWinCounts ++;
+        console.log(`User's wins: ${userWinCounts}, computer's win: ${computerWinCounts}`);
     } else if (userInputUpperCase == 'Paper' && computerChoice == 'Scissors') {
-        console.log(`Computer's choice is '${computerChoice}'. You loose. ${computerChoice} beats ${userInputUpperCase}`)
+        console.log(`Computer's choice is '${computerChoice}'. You loose. ${computerChoice} beats ${userInputUpperCase}`);
+        computerWinCounts ++;
+        console.log(`User's wins: ${userWinCounts}, computer's win: ${computerWinCounts}`);
     } else if (userInputUpperCase == 'Rock' && computerChoice == 'Scissors') {
-        console.log(`Computer's choice is '${computerChoice}'. You win! ${userInputUpperCase} beats ${computerChoice}`)
+        console.log(`Computer's choice is '${computerChoice}'. You win! ${userInputUpperCase} beats ${computerChoice}`);
+        userWinCounts ++;
+        console.log(`User's wins: ${userWinCounts}, computer's win: ${computerWinCounts}`);
     } else if (userInputUpperCase == 'Rock' && computerChoice == 'Paper') {
-        console.log(`Computer's choice is '${computerChoice}'. You loose. ${computerChoice} beats ${userInputUpperCase}`)
+        console.log(`Computer's choice is '${computerChoice}'. You loose. ${computerChoice} beats ${userInputUpperCase}`);
+        computerWinCounts ++;
+        console.log(`User's wins: ${userWinCounts}, computer's win: ${computerWinCounts}`);
     }
 };
 
@@ -47,7 +63,13 @@ function currentScore() {
         playRound(userInputUpperCase, computerOutput);
 
         if (count == 4) {
-            console.log('The end of the round');
+            if (computerWinCounts > userWinCounts) {
+                console.log('The end of the round! Computer wins!');
+            } else if (computerWinCounts < userWinCounts) {
+                console.log('The end of the round! User wins!');
+            } else if (computerWinCounts == userWinCounts) {
+                console.log('The end of the round! Tie!');
+            }
         }
     }
 }

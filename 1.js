@@ -15,3 +15,8 @@ function getComputerChoice() {
 function getNumber() {
     return Math.floor(Math.random() * choice_array.length);
 }
+
+//user's turn
+const userInput = prompt();
+userInputUpperCase = userInput[0].toUpperCase() + userInput.slice(1);
+console.log(userInputUpperCase); //debugging

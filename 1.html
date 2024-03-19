@@ -7,6 +7,37 @@
         <link rel="stylesheet" href="1.css">
     </body>
     <head>
+        <div class="header"><h1>Rock Paper Scissors</h1></div>
+        <div class="playGround">
+            <div class="playerGround">
+                <div class="card">
+                    <img src="img/cat.png">
+                    <p>User</p>
+                </div>
+                <button type="button" class="userChoiceButton" id="userChoiceButton"></button>
+            </div>
+            <div class="infoGround">
+                <p>vs</p>
+                <div class="results">
+                    <p id="userScore">User's score: </p>
+                    <p id="computerScore">Computer's score: </p>
+                    <p id="gameCount">Total games: </p>
+                </div>
+            </div>
+            <div class="playerGround">
+                <div class="card">
+                    <img src="img/whale.png">
+                    <p>Computer</p>
+                </div>
+                <button type="button" class="computerChoiceButton" id="computerChoiceButton"></button>
+            </div>
+        </div>
+        <div class="chooseTable">
+            <button type="button" id="rock">Rock</button>
+            <button type="button" id="paper">Paper</button>
+            <button type="button" id="scissors">Scissors</button>
+        </div>
         <script src="1.js"></script>
+        <div class="footer"><p>by vasenkom</p></div>
     </head>
 </html>

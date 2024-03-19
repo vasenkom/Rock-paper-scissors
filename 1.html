@@ -8,35 +8,38 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
     </body>
     <head>
-        <div class="header"><h1>Rock Paper Scissors</h1></div>
-        <div class="playGround">
-            <div class="playerGround">
-                <div class="card">
-                    <img src="img/cat.png">
-                    <h4>User</h4>
+        <div class="main">
+            <div class="header"><h1>Rock Paper Scissors</h1></div>
+            <div class="playGround">
+                <div class="playerGround">
+                    <div class="card">
+                        <img src="img/cat.png">
+                        <h4>User</h4>
+                    </div>
+                    <p class="resultBoard" id="userChoice">Rock</p>
                 </div>
-                <p class="resultBoard" id="userChoice">Rock</p>
-            </div>
-            <div class="infoGround">
-                <div class="vs"><h4>vs</h4></div>
-                <div class="results">
-                    <p id="userScore">User's score: </p>
-                    <p id="computerScore">Bot's score: </p>
-                    <p id="gameCount">Total games: </p>
+                <div class="infoGround">
+                    <div class="vs"><h4>vs</h4></div>
+                    <div class="results">
+                        <p id="userScore">User's score: </p>
+                        <p id="computerScore">Bot's score: </p>
+                        <p id="gameCount">Total games: </p>
+                    </div>
+                </div>
+                <div class="playerGround">
+                    <div class="card">
+                        <img src="img/whale.png">
+                        <h4>Bot</h4>
+                    </div>
+                    <p class="resultBoard" id="computerChoice">Rock</p>
                 </div>
             </div>
-            <div class="playerGround">
-                <div class="card">
-                    <img src="img/whale.png">
-                    <h4>Bot</h4>
-                </div>
-                <p class="resultBoard" id="computerChoice">Rock</p>
+            <div class="chooseTable">
+                <div style="text-align: center;"><p>Choose:</p></div>
+                <button type="button" id="rock">Rock</button>
+                <button type="button" id="paper">Paper</button>
+                <button type="button" id="scissors">Scissors</button>
             </div>
-        </div>
-        <div class="chooseTable">
-            <button type="button" id="rock">Rock</button>
-            <button type="button" id="paper">Paper</button>
-            <button type="button" id="scissors">Scissors</button>
         </div>
         <!--<script src="1.js"></script>-->
         

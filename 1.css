@@ -13,9 +13,20 @@ body {
     align-items: center;
     justify-content: center;
 }
+.footer {
+    height: 60px;
+}
 .header h1 {
     text-align: center;
+    font-size: 40px;
     font-weight: 700;
+}
+.main {
+    height: 535px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
 }
 .playGround {
     margin-top: 20px;
@@ -28,7 +39,6 @@ body {
     gap: 35px;
     height: 258px;
     width: 570px;
-    
 }
 .playerGround, .card, .infoGround {
     display: flex;
@@ -48,7 +58,7 @@ body {
     border: 5px solid #f5b24d;
 }
 .resultBoard {
-    background-color: #a1c6d4;
+    background-color: #89c89f;
     border-radius: 10px;
     padding: 8px;
     font-size: 18px;
@@ -56,8 +66,7 @@ body {
 .infoGround {
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    align-items: center
+    align-items: center;
 }
 .vs {
     display: flex;
@@ -70,7 +79,6 @@ body {
     display: flex;
     align-self: center;
     justify-self: center;
-    
 }
 .infoGround .results {
     display: flex;
@@ -78,8 +86,29 @@ body {
     align-self: flex-end;
     font-size: 17px;
     padding: 8px 15px;
-    background-color: white;
-    border: 5px solid pink ;
+    background-color: rgba(253, 232, 236, 0.498);
+    border: 5px solid rgb(252, 203, 211) ;
     border-radius: 10px;
+}
+.chooseTable {
+    border-radius: 10px;
+    background-color: #bdcbc27b;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 570px;
+    gap: 15px;
+    padding: 10px;
+}
+.chooseTable button {
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #98ccde;
+    border: none;
+    font-size: 20px;
 }
 

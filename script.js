@@ -1,3 +1,30 @@
+function getRandomAvatar() {
+    const imgAvatars = [
+        'img/cat.png',
+        'img/fox.png',
+        'img/koala.png',
+        'img/turtle.png',
+        'img/whale.png',
+    ];
+
+    //user's main img
+    const randomIndexUser = Math.floor(Math.random() * imgAvatars.length);
+    const randomAvatarUser = imgAvatars[randomIndexUser];
+    const imgAvatardivUser = document.getElementById('cardImgUser');
+    const imageUser = document.createElement('img');
+    imageUser.src = randomAvatarUser;
+    imgAvatardivUser.appendChild(imageUser);
+
+    //Computer's main img
+    const randomIndexComputer = Math.floor(Math.random() * imgAvatars.length);
+    const randomAvatarComputer = imgAvatars[randomIndexComputer];
+    const imgAvatardivComputer = document.getElementById('cardImgComputer');
+    const imageComputer = document.createElement('img');
+    imageComputer.src = randomAvatarComputer;
+    imgAvatardivComputer.appendChild(imageComputer);
+}
+getRandomAvatar();
+
 //Counting elements
 let userWinCount = 0;
 let computerWinCount = 0;

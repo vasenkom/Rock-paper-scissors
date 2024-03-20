@@ -89,7 +89,7 @@ body {
     font-size: 18px;
     padding: 8px 15px;
 }
-.winLoseTie {
+.winLoseTie, #fiveWinsCongr {
     text-align: center;
     font-size: 18px;
     margin: 5px 0;

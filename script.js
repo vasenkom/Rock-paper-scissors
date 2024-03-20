@@ -130,7 +130,18 @@ function resultTeller(userInput, computerOutput) {
     console.log(computerWinCount); // Debugging
     console.log(userWinCount); // Debugging
     updateResult(newResultFromResultTeller);
-    countChanger(computerWinCount, userWinCount)
+    countChanger(computerWinCount, userWinCount);
+
+    let fiveWins;
+    if (userWinCount != 0 && computerWinCount != 0 && computerWinCount % 5 === 0) {
+        fiveWins = `Bot won ${computerWinCount} times!`;
+        fiveWinsFunction (fiveWins);
+    } else if (userWinCount != 0 && computerWinCount != 0 && userWinCount % 5 === 0 ) {
+        fiveWins = `You won ${userWinCount} times! Yupi!`
+        fiveWinsFunction (fiveWins);
+    } else {
+        fiveWinsFunctionRemover();
+    }
 }
 
 
@@ -139,6 +150,7 @@ function updateResult(newResultFromResultTeller) {
     const noResult = document.getElementById('noResult');
 
     const newResult = document.createElement('h4');
+   
     newResult.textContent = newResultFromResultTeller;
 
     const existingResult = document.getElementById('winLoseTie').querySelector('h4');
@@ -148,6 +160,31 @@ function updateResult(newResultFromResultTeller) {
     }
 
     resultContainer.appendChild(newResult);
+    
+}
+
+function fiveWinsFunction (fiveWins) {
+    const fiveWinResultContainer = document.getElementById('fiveWinsCongr');
+    const fiveWinsResult = document.createElement('h4');
+
+    const existingfiveWinsResult = fiveWinResultContainer.querySelector('h4');
+
+    if (existingfiveWinsResult) {
+        fiveWinResultContainer.removeChild(existingfiveWinsResult);
+    }
+
+    fiveWinsResult.textContent = fiveWins;
+    fiveWinResultContainer.appendChild(fiveWinsResult);
+}
+
+function fiveWinsFunctionRemover () {
+    const fiveWinResultContainer = document.getElementById('fiveWinsCongr');
+
+    const existingfiveWinsResult = fiveWinResultContainer.querySelector('h4');
+
+    if (existingfiveWinsResult) {
+        fiveWinResultContainer.removeChild(existingfiveWinsResult);
+    }
 }
 
 function countChanger(computerWinCount, userWinCount) {

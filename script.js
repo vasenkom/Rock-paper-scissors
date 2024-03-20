@@ -1,3 +1,4 @@
+//Set Avatar
 function getRandomAvatar() {
     const imgAvatars = [
         'img/cat.png',
@@ -24,6 +25,15 @@ function getRandomAvatar() {
     imgAvatardivComputer.appendChild(imageComputer);
 }
 getRandomAvatar();
+
+//Renew button
+const btnRenew = document.getElementById('renewButton');
+
+btnRenew.addEventListener('click', function () {
+    return userWinCount = 0;
+    return computerWinCount = 0;
+
+});
 
 //Counting elements
 let userWinCount = 0;

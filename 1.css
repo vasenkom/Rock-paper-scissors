@@ -12,11 +12,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
+    gap: 5px;
+}
+#renewButton {
+    border: none;
+    background: transparent;
+}
+#renew {
+    font-weight: 900;
 }
 .footer {
     height: 60px;
 }
-.header h1 {
+.header h1, #renew {
     text-align: center;
     font-size: 40px;
     font-weight: 700;

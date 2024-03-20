@@ -16,14 +16,14 @@
                         <img src="img/cat.png">
                         <h4>User</h4>
                     </div>
-                    <p class="resultBoard" id="userChoice">Rock</p>
+                    <div class="resultBoard" class="userChoiceHTML" id="userChoiceHTML"> <span id="noResultUser">???</span></div>
                 </div>
                 <div class="infoGround">
                     <div class="vs"><h4>vs</h4></div>
                     <div class="results">
-                        <p id="userScore">User's score: </p>
-                        <p id="computerScore">Bot's score: </p>
-                        <p id="gameCount">Total games: </p>
+                        <h3 id="userScore">0</h3>
+                        <h3>:</h3>
+                        <h3 id="computerScore">0</h3>
                     </div>
                 </div>
                 <div class="playerGround">
@@ -31,18 +31,17 @@
                         <img src="img/whale.png">
                         <h4>Bot</h4>
                     </div>
-                    <p class="resultBoard" id="computerChoice">Rock</p>
+                    <p class="resultBoard" id="computerChoiceHTML"> <span class="noResultComputer" id="noResultComputer">???</span></p>
                 </div>
             </div>
+            <div class="winLoseTie" id="winLoseTie"><h4 id="noResult" class="noResult">No results yet!</h4></div>
             <div class="chooseTable">
-                <div style="text-align: center;"><p>Choose:</p></div>
                 <button type="button" id="rock">Rock</button>
                 <button type="button" id="paper">Paper</button>
                 <button type="button" id="scissors">Scissors</button>
             </div>
         </div>
-        <!--<script src="1.js"></script>-->
-        
         <div class="footer"><p>by vasenkom</p></div>
+        <script src="1_1.js"></script>
     </head>
 </html>

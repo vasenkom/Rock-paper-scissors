@@ -56,6 +56,7 @@ body {
     border-radius: 50%;
     background-color: white;
     border: 5px solid #f5b24d;
+    
 }
 .resultBoard {
     background-color: #89c89f;
@@ -80,15 +81,18 @@ body {
     align-self: center;
     justify-self: center;
 }
-.infoGround .results {
+.results {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-self: flex-end;
-    font-size: 17px;
+    gap: 10px;
+    font-size: 18px;
     padding: 8px 15px;
-    background-color: rgba(253, 232, 236, 0.498);
-    border: 5px solid rgb(252, 203, 211) ;
-    border-radius: 10px;
+}
+.winLoseTie {
+    text-align: center;
+    font-size: 18px;
+    margin: 5px 0;
 }
 .chooseTable {
     border-radius: 10px;
@@ -99,10 +103,10 @@ body {
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
+    margin-top: 20px;
     width: 570px;
-    gap: 15px;
-    padding: 10px;
+    gap: 10px;
+    padding: 15px;
 }
 .chooseTable button {
     padding: 8px;
@@ -111,4 +115,6 @@ body {
     border: none;
     font-size: 20px;
 }
-
+.chooseTable button:hover {
+    background-color: #6dbeda;
+}

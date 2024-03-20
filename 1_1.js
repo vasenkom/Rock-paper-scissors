@@ -1,3 +1,7 @@
+//Counting elements
+let userWinCount = 0;
+let computerWinCount = 0;
+
 //computer's turn
 const choice_array = ['Rock', 'Paper', 'Scissors'];
 
@@ -17,6 +21,30 @@ const btnRock = document.getElementById('rock');
 btnRock.addEventListener('click', function () {
 
     const userInput = 'Rock';
+    let computerOutput = getComputerChoice();
+    
+    resultTeller(userInput, computerOutput);
+    }  
+)
+
+//Paper button
+const btnPaper = document.getElementById('paper');
+
+btnPaper.addEventListener('click', function () {
+
+    const userInput = 'Paper';
+    let computerOutput = getComputerChoice();
+    
+    resultTeller(userInput, computerOutput);
+    }  
+)
+
+//Scissors button
+const btnScissors = document.getElementById('scissors');
+
+btnScissors.addEventListener('click', function () {
+
+    const userInput = 'Scissors';
     let computerOutput = getComputerChoice();
     
     resultTeller(userInput, computerOutput);
@@ -45,21 +73,18 @@ function updateUserItem (userInput) {
 
 function updateComputerItem (computerOutput) {
     
-
     const computerItem = document.getElementById('computerChoiceHTML');
     const noComputerItem = document.getElementById('noResultComputer');
 
     const newComputerItem = document.createElement('span');
     newComputerItem.textContent = computerOutput;
 
-    // Check if there's already a newComputerItem
     const existingComputerItem = document.getElementById('computerChoiceHTML').querySelector('span');
-    // If there's an existing newUserItem, remove it
+    
     if (existingComputerItem) {
         computerItem.removeChild(existingComputerItem);
     }
 
-    // Append the new newUserItem
     computerItem.appendChild(newComputerItem);
 
     return computerOutput;
@@ -68,8 +93,7 @@ function updateComputerItem (computerOutput) {
 function resultTeller(userInput, computerOutput) {
     updateUserItem(userInput);
     updateComputerItem(computerOutput); // Pass computerOutput to updateComputerItem
-    let userWinCount = 0;
-    let computerWinCount = 0;
+    
     console.log(computerOutput); // Debugging
 
     let newResultFromResultTeller;
@@ -86,13 +110,13 @@ function resultTeller(userInput, computerOutput) {
         newResultFromResultTeller = 'You won!';
         userWinCount++;
     } else if (userInput === 'Paper' && computerOutput === 'Rock') {
-        console.log(`Bot won!  ${computerOutput}`);
-        newResultFromResultTeller = 'Bot won!';
-        computerWinCount++;
-    } else if (userInput === 'Paper' && computerOutput === 'Scissors') {
         console.log(`You won!  ${computerOutput}`);
         newResultFromResultTeller = 'You won!';
         userWinCount++;
+    } else if (userInput === 'Paper' && computerOutput === 'Scissors') {
+        console.log(`Bot won!  ${computerOutput}`);
+        newResultFromResultTeller = 'Bot won!';
+        computerWinCount++;
     } else if (userInput === 'Rock' && computerOutput === 'Scissors') {
         console.log(`You won!  ${computerOutput}`);
         newResultFromResultTeller = 'You won!';
@@ -106,6 +130,7 @@ function resultTeller(userInput, computerOutput) {
     console.log(computerWinCount); // Debugging
     console.log(userWinCount); // Debugging
     updateResult(newResultFromResultTeller);
+    countChanger(computerWinCount, userWinCount)
 }
 
 
@@ -123,4 +148,36 @@ function updateResult(newResultFromResultTeller) {
     }
 
     resultContainer.appendChild(newResult);
+}
+
+function countChanger(computerWinCount, userWinCount) {
+    //change user's results
+    const userCountChanger = document.getElementById('userScoreDIV');
+    const oldUserScore = document.getElementById('userScore');
+    
+    const newUserScore = document.createElement('h3');
+    newUserScore.textContent = userWinCount;
+
+    const existingUserScore = document.getElementById('userScoreDIV').querySelector('h3');
+
+    if (existingUserScore) {
+        userCountChanger.removeChild(existingUserScore);
+    }
+
+    userCountChanger.appendChild(newUserScore);
+
+    //change computer's results
+    const computerCountChanger = document.getElementById('computerScoreDIV');
+    const oldComputerScore = document.getElementById('computerScore');
+    const newComputerScore = document.createElement('h3');
+
+    newComputerScore.textContent = computerWinCount;
+
+    const existingComputerScore = computerCountChanger.querySelector('h3');
+
+    if (existingComputerScore) {
+        computerCountChanger.removeChild(existingComputerScore);
+    }
+
+    computerCountChanger.appendChild(newComputerScore);
 }

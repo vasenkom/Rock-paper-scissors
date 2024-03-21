@@ -4,7 +4,7 @@ function getRandomAvatar() {
         'img/cat.png',
         'img/fox.png',
         'img/koala.png',
-        'img/turtle.png',
+        'img/turtle1.png',
         'img/whale.png',
     ];
 
@@ -25,15 +25,6 @@ function getRandomAvatar() {
     imgAvatardivComputer.appendChild(imageComputer);
 }
 getRandomAvatar();
-
-//Renew button
-const btnRenew = document.getElementById('renewButton');
-
-btnRenew.addEventListener('click', function () {
-    return userWinCount = 0;
-    return computerWinCount = 0;
-
-});
 
 //Counting elements
 let userWinCount = 0;
